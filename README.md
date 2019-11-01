@@ -1,2 +1,2 @@
 # move-messagetypes
-Messagetypes used by eFormidling
+Messagetypes supported by eFormidling
