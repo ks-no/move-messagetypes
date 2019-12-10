@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ar:arkivmelding xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog"
+<ar:arkivmelding xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog file:metadatakatalog.xsd"
  xmlns:ar="http://www.arkivverket.no/standarder/noark5/arkivmelding"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.arkivverket.no/standarder/noark5/arkivmelding file:/C:/Users/jani.INTERN/Desktop/Difi/move-messagetypes/arkivmeling/arkivmelding.xsd">
+ xsi:schemaLocation="http://www.arkivverket.no/standarder/noark5/arkivmelding file:./arkivmelding.xsd">
     <ar:system>system0</ar:system>
     <ar:meldingId>meldingId0</ar:meldingId>
     <ar:tidspunkt>2006-05-04T18:13:51.0</ar:tidspunkt>
