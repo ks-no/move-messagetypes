@@ -24,10 +24,10 @@
 	
 	<xs:complexType name="mappe">
 		<xs:sequence>
-			<xs:element name="systemID" type="GUID" minOccurs="0"/>
+			<xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
 			<xs:element name="mappeID" type="n5mdk:mappeID" minOccurs="0"/>
 			<!-- ReferanseForelderMappe gir mulighet for putte en mappe inn under en eksisterende mappe -->
-			<xs:element minOccurs="0" name="ReferanseForeldermappe" type="GUID"/>
+			<xs:element minOccurs="0" name="ReferanseForeldermappe" type="n5mdk:systemID"/>
 			<xs:element name="tittel" type="n5mdk:tittel"/>
 			<xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
 			<xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
@@ -83,9 +83,8 @@
 			<xs:element name="partNavn" type="n5mdk:partNavn"/>
 			<xs:element name="partRolle" type="n5mdk:partRolle" minOccurs="0"/>
 			<xs:choice minOccurs="0" maxOccurs="1">
-				<xs:element name="organisasjonsnummer" minOccurs="0" type="EnhetsidentifikatorType"/>
-				<xs:element name="foedselsnummer" minOccurs="0" type="FoedselsnummerType"/>
-				<xs:element name="DNummer" minOccurs="0" type="DNummerType"/>
+				<xs:element name="organisasjonid" minOccurs="0" type="n5mdk:organisasjonid"/>
+				<xs:element name="personid" minOccurs="0" type="n5mdk:personid"/>
 			</xs:choice>
 			<xs:element name="postadresse" type="n5mdk:postadresse" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="postnummer" type="n5mdk:postnummer" minOccurs="0"/>
@@ -110,7 +109,7 @@
 
 			<!-- Dersom ren registrering kommer alene må den kunne plasseres i en mappe eller arkivdel-->
 			<xs:choice minOccurs="0" maxOccurs="1">
-				<xs:element name="referanseForelderMappe" type="GUID"/>
+				<xs:element name="referanseForelderMappe" type="n5mdk:systemID"/>
 				<xs:element name="referanseArkivdel" type="n5mdk:referanseArkivdel"/>
 			</xs:choice>
 			
@@ -167,12 +166,12 @@
 
 	<xs:complexType name="korrespondansepart">
 		<xs:sequence>
+			<xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
 			<xs:element name="korrespondanseparttype" type="n5mdk:korrespondanseparttype"/>
 			<xs:element name="korrespondansepartNavn" type="n5mdk:korrespondansepartNavn"/>
 			<xs:choice minOccurs="0" maxOccurs="1">
-				<xs:element name="organisasjonsnummer" minOccurs="0" type="EnhetsidentifikatorType"/>
-				<xs:element name="foedselsnummer" minOccurs="0" type="FoedselsnummerType"/>
-				<xs:element name="DNummer" minOccurs="0" type="DNummerType"/>
+				<xs:element name="organisasjonid" minOccurs="0" type="n5mdk:organisasjonid"/>
+				<xs:element name="personid" minOccurs="0" type="n5mdk:personid"/>
 			</xs:choice>
 			<xs:element name="postadresse" type="n5mdk:postadresse" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="postnummer" type="n5mdk:postnummer" minOccurs="0"/>
@@ -232,7 +231,7 @@
 
 	<xs:complexType name="dokumentbeskrivelse">
 		<xs:sequence>
-			<xs:element name="systemID" type="GUID" minOccurs="0"/>
+			<xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
 			<xs:element name="dokumenttype" type="n5mdk:dokumenttype"/>
 			<xs:element name="dokumentstatus" type="n5mdk:dokumentstatus"/>
 			<xs:element name="tittel" type="n5mdk:tittel"/>
@@ -281,6 +280,7 @@
 
   	<xs:complexType name="merknad">
 		<xs:sequence>
+			<xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
 			<xs:element name="merknadstekst" type="n5mdk:merknadstekst"/>
 			<xs:element name="merknadstype" type="n5mdk:merknadstype" minOccurs="0"/>
 			<xs:element name="merknadsdato" type="n5mdk:merknadsdato"/>
@@ -326,18 +326,13 @@
 			<xs:element name="presedensStatus" type="n5mdk:presedensStatus" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="klasse">
+	<xs:complexType name="klassifikasjon">
 		<xs:sequence>
-			<xs:element name="systemID" type="GUID" minOccurs="0"/>
-			<xs:element name="klassifikasjonssystem" type = "xs:string"/>
+			<xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
+			<xs:element name="klassifikasjonssystem" type = "n5mdk:klassifikasjonssystem"/>
 			<xs:element name="klasseID" type="n5mdk:klasseID"/>
 			<xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
-			<xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0" />
-			<xs:element name="noekkelord" type="n5mdk:noekkelord" maxOccurs="unbounded" minOccurs="0" />
-			<xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
-			<xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
 			<xs:element name="skjermetObjekt" type="n5mdk:skjermetObjekt" minOccurs="0"/>
-
 		</xs:sequence>
 	</xs:complexType>
 
@@ -351,72 +346,23 @@
 
   <xs:complexType name="hendelseslogg">
     <xs:sequence>
-      <xs:element name="referanseArkivenhet" type = "xs:string"/>
-      <xs:element name="beskrivelse" type = "xs:string"/>
-	  <xs:element name="hendelsestype" type = "xs:string"/>
-	  <xs:element name="hendelsesdato" type = "xs:string"/>
-	  <xs:element name="utfortAv" type = "xs:string"/>
+      <xs:element name="referanseArkivenhet" type = "n5mdk:referanseArkivenhet"/>
+      <xs:element name="beskrivelse" type = "n5mdk:beskrivelse" minOccurs="0"/>
+	  <xs:element name="hendelsestype" type = "n5mdk:hendelsestype" />
+	  <xs:element name="hendelsesdato" type = "n5mdk:hendelsesdato"/>
+	  <xs:element name="utfortAv" type = "n5mdk:utfortAv"  minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-  
-	<xs:simpleType name="GUID">
-		<xs:restriction base="xs:string">
-			<xs:pattern value="([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\})"/>
-		</xs:restriction>
-	</xs:simpleType>
-	
-	<xs:complexType name="EnhetsidentifikatorType">
-		<xs:complexContent>
-			<xs:extension base="AbstraktNasjonalidentifikatorType">
-				<xs:sequence>
-					<xs:element name="organisasjonsnummer" type="xs:string"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	
-	<xs:element name="Foedselsnummer" type="FoedselsnummerType"/>
-    <xs:complexType name="FoedselsnummerType">
-		<xs:complexContent>
-			<xs:extension base="AbstraktPersonidentifikatorType">
-				<xs:sequence>
-					<xs:element name="foedselsnummer" type="xs:string"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
 
-	<xs:element name="DNummer" type="DNummerType"/>
-    <xs:complexType name="DNummerType">
-		<xs:complexContent>
-			<xs:extension base="AbstraktPersonidentifikatorType">
-				<xs:sequence>
-					<xs:element name="DNummer" type="xs:string"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
 
-	<xs:complexType name="AbstraktPersonidentifikatorType" abstract="true">
-		<xs:complexContent>
-			<xs:extension base="AbstraktNasjonalidentifikatorType">
-				<xs:sequence/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
+
 	
 	<xs:complexType name="AbstraktNasjonalidentifikatorType" abstract="true">
-		<xs:complexContent>
-			<xs:extension base="AbstraktResourceType">
-				<xs:sequence>
-					<xs:element name="systemID" minOccurs="0" type="GUID"/>
-					<xs:element name="beskrivelse" minOccurs="0" type="xs:string"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:element name="systemID" minOccurs="0" type="n5mdk:systemID"/>
+			<xs:element name="beskrivelse" minOccurs="0" type="xs:string"/>
+		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:complexType name="AbstraktResourceType" abstract="true">
-		<xs:sequence/>		
-	</xs:complexType>
+	
 </xs:schema>

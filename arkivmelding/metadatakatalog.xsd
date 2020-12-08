@@ -1462,4 +1462,46 @@
     <xs:restriction base="ID"/>
   </xs:simpleType>
 
+  <xs:simpleType name="hendelsestype">
+    <xs:annotation>
+      <xs:documentation>M4..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hendelsesdato">
+    <xs:annotation>
+      <xs:documentation>M4..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:dateTime"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="klassifikasjonssystem">
+    <xs:annotation>
+      <xs:documentation>M4..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="personid">
+    <xs:annotation>
+      <xs:documentation>M4..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="organisasjonid">
+    <xs:annotation>
+      <xs:documentation>M4..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
 </xs:schema>
