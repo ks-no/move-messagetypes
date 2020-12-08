@@ -1549,12 +1549,37 @@
     <xs:restriction base="xs:integer" />
   </xs:simpleType>
 
-<xs:simpleType name="bygningsnummer">
+<xs:simpleType name="endringsloepenummer">
     <xs:annotation>
       <xs:documentation>M3..</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:integer" />
   </xs:simpleType>
 
+<xs:simpleType name="fylkesnummer">
+    <xs:annotation>
+      <xs:documentation>M3..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
 
+  <xs:simpleType name="landkode">
+    <xs:annotation>
+      <xs:documentation>M3..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+   <xs:simpleType name="planidentifikasjon">
+    <xs:annotation>
+      <xs:documentation>M3..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
 </xs:schema>
