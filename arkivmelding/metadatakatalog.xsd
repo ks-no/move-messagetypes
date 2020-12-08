@@ -1504,4 +1504,57 @@
       <xs:minLength value="1"/>
     </xs:restriction>
   </xs:simpleType>
+
+  <xs:simpleType name="kommunenummer">
+    <xs:annotation>
+      <xs:documentation>M3..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gardsnummer">
+    <xs:annotation>
+      <xs:documentation>M3..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer" />
+  </xs:simpleType>
+
+  <xs:simpleType name="bruksnummer">
+    <xs:annotation>
+      <xs:documentation>M3..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer" />
+  </xs:simpleType>
+
+<xs:simpleType name="festenummer">
+    <xs:annotation>
+      <xs:documentation>M3..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer" />
+  </xs:simpleType>
+
+  <xs:simpleType name="seksjonsnummer">
+    <xs:annotation>
+      <xs:documentation>M3..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer" />
+  </xs:simpleType>
+
+<xs:simpleType name="bygningsnummer">
+    <xs:annotation>
+      <xs:documentation>M3..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer" />
+  </xs:simpleType>
+
+<xs:simpleType name="bygningsnummer">
+    <xs:annotation>
+      <xs:documentation>M3..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer" />
+  </xs:simpleType>
+
+
 </xs:schema>

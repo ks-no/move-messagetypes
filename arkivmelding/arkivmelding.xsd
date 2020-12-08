@@ -46,7 +46,7 @@
 			<xs:element name="skjerming" type="skjerming" minOccurs="0"/>
 			<xs:element name="gradering" type="gradering" minOccurs="0"/>
 
-			<xs:element name="klasse" type="klasse" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
 
       		<xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="1" maxOccurs="1"/>
       
@@ -129,6 +129,8 @@
 			<xs:element name="merknad" type="merknad" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="kryssreferanse" type="kryssreferanse" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="korrespondansepart" type="korrespondansepart" minOccurs="0" maxOccurs="unbounded"/>
+
+			<xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
 
       		<xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="1" maxOccurs="1"/>
       
