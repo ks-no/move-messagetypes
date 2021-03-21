@@ -1620,4 +1620,13 @@
     <xs:restriction base="ID"/>
   </xs:simpleType>
 
+  <xs:simpleType name="utfortAv">
+    <xs:annotation>      
+      <xs:documentation>M4..</xs:documentation>    
+    </xs:annotation>    
+    <xs:restriction base="xs:string">      
+      <xs:minLength value="1"/>    
+    </xs:restriction>  
+  </xs:simpleType>
+
 </xs:schema>
