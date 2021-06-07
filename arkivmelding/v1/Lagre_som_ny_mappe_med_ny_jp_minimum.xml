@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ar:arkivmelding xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog file:metadatakatalog.xsd"
+ xmlns:ar="http://www.arkivverket.no/standarder/noark5/arkivmelding"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.arkivverket.no/standarder/noark5/arkivmelding file:./arkivmelding.xsd">
+    <ar:system>system0</ar:system>
+    <ar:meldingId>meldingId0</ar:meldingId>
+    <ar:tidspunkt>2006-05-04T18:13:51.0</ar:tidspunkt>
+    <ar:antallFiler>1</ar:antallFiler>
+    <ar:mappe xsi:type="ar:saksmappe">
+        <ar:systemID>9b5cd164-d638-4c6b-bf29-dcdfddce3f0d</ar:systemID>
+        <ar:tittel>Test</ar:tittel>
+        <ar:klasse>
+            <ar:klassifikasjonssystem>Personnummer</ar:klassifikasjonssystem>
+            <ar:klasseID>19085830948</ar:klasseID>
+        </ar:klasse>
+        <ar:registrering xsi:type="ar:journalpost">
+            <ar:systemID>9b5cd164-d638-4c6b-bf29-dcdfddce3f0e</ar:systemID>
+            <ar:dokumentbeskrivelse>
+                <ar:systemID>925acc04-65d7-449b-b2b6-07fac65d4d97</ar:systemID>
+                <ar:dokumenttype>D</ar:dokumenttype>
+                <ar:dokumentstatus>R</ar:dokumentstatus>
+                <ar:tittel>Dokumenttittel</ar:tittel>
+                <ar:tilknyttetRegistreringSom>H</ar:tilknyttetRegistreringSom>
+                <ar:dokumentobjekt>
+                    <ar:versjonsnummer>1</ar:versjonsnummer>
+                    <ar:variantformat>P</ar:variantformat>
+                    <ar:format>PDF</ar:format>
+                    <ar:referanseDokumentfil>7e98d11e-d21e-42ba-93a2-0d91d9749275</ar:referanseDokumentfil>
+                </ar:dokumentobjekt>
+            </ar:dokumentbeskrivelse>
+            <ar:tittel>Test</ar:tittel>
+            <ar:journalposttype>U</ar:journalposttype>
+            <ar:journalstatus>F</ar:journalstatus>
+        </ar:registrering>
+    </ar:mappe>
+</ar:arkivmelding>
